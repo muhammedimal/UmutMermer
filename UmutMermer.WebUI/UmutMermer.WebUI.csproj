@@ -17,12 +17,17 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.15" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\UmutMermer.BusinessLayer\UmutMermer.BusinessLayer.csproj" />
     <ProjectReference Include="..\UmutMermer.DataAccesLayer\UmutMermer.DataAccesLayer.csproj" />
     <ProjectReference Include="..\UmutMermer.EntityLayer\UmutMermer.EntityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
   </ItemGroup>
 
 </Project>
