@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+@await Html.PartialAsync("/Views/AdminLayout/HeadPartial.cshtml")
+
+<body class="sidebar-mini fixed">
+
+    <div class="wrapper">
+        @await Html.PartialAsync("/Views/AdminLayout/NavBarPartial.cshtml")
+        @await Html.PartialAsync("/Views/AdminLayout/SideBarPartial.cshtml")
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    @await Html.PartialAsync("/Views/AdminLayout/ScriptPartial.cshtml")
+</body>
+</html>

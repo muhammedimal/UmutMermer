@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmutMermer.WebApi", "UmutMermer.WebApi\UmutMermer.WebApi.csproj", "{07D8C858-2A59-4CF2-B494-36FCB6263CEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmutMermer.WebApi", "UmutMermer.WebApi\UmutMermer.WebApi.csproj", "{07D8C858-2A59-4CF2-B494-36FCB6263CEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmutMermer.DataAccesLayer", "UmutMermer.DataAccesLayer\UmutMermer.DataAccesLayer.csproj", "{66BE0BEF-01A5-4DD8-B9FE-30D49124D9F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmutMermer.DataAccesLayer", "UmutMermer.DataAccesLayer\UmutMermer.DataAccesLayer.csproj", "{66BE0BEF-01A5-4DD8-B9FE-30D49124D9F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmutMermer.BusinessLayer", "UmutMermer.BusinessLayer\UmutMermer.BusinessLayer.csproj", "{B88A69D3-4C74-47E5-880B-C95BED7F428A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmutMermer.BusinessLayer", "UmutMermer.BusinessLayer\UmutMermer.BusinessLayer.csproj", "{B88A69D3-4C74-47E5-880B-C95BED7F428A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmutMermer.EntityLayer", "UmutMermer.EntityLayer\UmutMermer.EntityLayer.csproj", "{B241DB16-EF13-41EA-98BD-C7A4B9079D8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmutMermer.EntityLayer", "UmutMermer.EntityLayer\UmutMermer.EntityLayer.csproj", "{B241DB16-EF13-41EA-98BD-C7A4B9079D8D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiConsume", "ApiConsume", "{D53529E8-9903-407E-A3DD-C7C3C5845839}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{182B25DF-A913-4703-9D1D-FF5A27F75292}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmutMermer.WebUI", "UmutMermer.WebUI\UmutMermer.WebUI.csproj", "{8355A5A2-341B-4C1F-AB78-1DEA0165169E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UmutMermer.DtoLAyer", "UmutMermer.DtoLAyer\UmutMermer.DtoLAyer.csproj", "{681A4357-8E78-4958-95CB-7E20E9FA6919}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmutMermer.DtoLAyer", "UmutMermer.DtoLAyer\UmutMermer.DtoLAyer.csproj", "{681A4357-8E78-4958-95CB-7E20E9FA6919}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmutMermer.WebUI", "Frontend\UmutMermer.WebUI\UmutMermer.WebUI.csproj", "{6025FA7E-1AEA-4703-89E9-F3112F110370}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,14 +41,14 @@ Global
 		{B241DB16-EF13-41EA-98BD-C7A4B9079D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B241DB16-EF13-41EA-98BD-C7A4B9079D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B241DB16-EF13-41EA-98BD-C7A4B9079D8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8355A5A2-341B-4C1F-AB78-1DEA0165169E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8355A5A2-341B-4C1F-AB78-1DEA0165169E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8355A5A2-341B-4C1F-AB78-1DEA0165169E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8355A5A2-341B-4C1F-AB78-1DEA0165169E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{681A4357-8E78-4958-95CB-7E20E9FA6919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{681A4357-8E78-4958-95CB-7E20E9FA6919}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{681A4357-8E78-4958-95CB-7E20E9FA6919}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{681A4357-8E78-4958-95CB-7E20E9FA6919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6025FA7E-1AEA-4703-89E9-F3112F110370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6025FA7E-1AEA-4703-89E9-F3112F110370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6025FA7E-1AEA-4703-89E9-F3112F110370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6025FA7E-1AEA-4703-89E9-F3112F110370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,8 +58,8 @@ Global
 		{66BE0BEF-01A5-4DD8-B9FE-30D49124D9F3} = {D53529E8-9903-407E-A3DD-C7C3C5845839}
 		{B88A69D3-4C74-47E5-880B-C95BED7F428A} = {D53529E8-9903-407E-A3DD-C7C3C5845839}
 		{B241DB16-EF13-41EA-98BD-C7A4B9079D8D} = {D53529E8-9903-407E-A3DD-C7C3C5845839}
-		{8355A5A2-341B-4C1F-AB78-1DEA0165169E} = {182B25DF-A913-4703-9D1D-FF5A27F75292}
 		{681A4357-8E78-4958-95CB-7E20E9FA6919} = {D53529E8-9903-407E-A3DD-C7C3C5845839}
+		{6025FA7E-1AEA-4703-89E9-F3112F110370} = {182B25DF-A913-4703-9D1D-FF5A27F75292}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F3E09CE7-CDDB-4CE8-8549-F38622CF3074}
