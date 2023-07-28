@@ -7,11 +7,11 @@ namespace UmutMermer.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompanyİnfoController : ControllerBase
+    public class CompanyInfoController : ControllerBase
     {
         private readonly ICompanyİnfoService _companyİnfo;
 
-        public CompanyİnfoController(ICompanyİnfoService companyİnfo)
+        public CompanyInfoController(ICompanyİnfoService companyİnfo)
         {
             _companyİnfo = companyİnfo;
         }
@@ -19,8 +19,8 @@ namespace UmutMermer.WebApi.Controllers
         [HttpGet]
         public IActionResult CompanyİnfoList()
         {
-
-            return Ok();
+            var value =_companyİnfo.TGetList();
+            return Ok(value);
         }
 
         [HttpPost]

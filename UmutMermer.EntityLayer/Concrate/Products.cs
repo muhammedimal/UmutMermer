@@ -13,7 +13,7 @@ namespace UmutMermer.EntityLayer.Concrate
         public string Name { get; set; }
         public string Images { get; set; }
         public string Description { get; set; }
-
        
+
     }
 }

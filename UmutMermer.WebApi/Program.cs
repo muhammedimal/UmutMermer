@@ -27,6 +27,17 @@ builder.Services.AddScoped<IPortfolioService, PortfolioManager>();
 builder.Services.AddScoped<IProductsDal, EfProducts>();
 builder.Services.AddScoped<IProductsService, ProductsManager>();
 
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("MermerApiCors", opts =>
+    {
+        opts.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+    });
+
+
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,7 +46,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors("MermerApiCors");
 app.UseAuthorization();
 
 app.MapControllers();

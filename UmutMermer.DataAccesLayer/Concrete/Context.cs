@@ -9,8 +9,8 @@ namespace UmutMermer.DataAccesLayer.Concrete
         {
             optionsBuilder.UseSqlServer("server=MUHAMMED;initial catalog=UmutMermer;integrated security=true ");
         }
-        public DbSet <Category> Categorys { get; set; }
-        public DbSet<Companyİnfo> Companyİnfos { get; set; }
+        public DbSet <Category> Categories { get; set; }
+        public DbSet<Companyİnfo> CompanyInfos { get; set; }
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<Products> Product { get; set; }
     }

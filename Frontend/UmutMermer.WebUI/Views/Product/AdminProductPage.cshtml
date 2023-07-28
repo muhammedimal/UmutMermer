@@ -1,4 +1,5 @@
 ﻿@{
+
     ViewData["Title"] = "AdminProductPage";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
@@ -48,33 +49,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @*@foreach (var item in Model)
-                                {*@
-                                <tr>
-                                    @*<td>@item.Name</td>
-                                    <td>@item.Category</td>*@
-                                    <td>
-                                        @*<a href="@Url.RouteUrl("ProductUpdate",new {id = item.ID })" class="btn btn-outline-success">Güncelle</a>*@
-                                        <a href="@*@Url.RouteUrl(" AdminProductsDetail",new {id=item.ID })*@" class="btn btn-outline-success">Güncelle</a>
-                                        <a id="@*@item.ID*@" href="javascript:;" class="btn btn-outline-danger">Sil</a>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
 
-                                    </td>
+                                        <td>
+                                            @*<a href="@Url.RouteUrl("ProductUpdate",new {id = item.ID })" class="btn btn-outline-success">Güncelle</a>*@
+                                            <a href="@*@Url.RouteUrl(" AdminProductsDetail",new {id=item.ID })*@" class="btn btn-outline-success">Güncelle</a>
+                                            <a id="@*@item.ID*@" href="javascript:;" class="btn btn-outline-danger">Sil</a>
 
-
-                                </tr>
+                                        </td>
 
 
+                                    </tr>
 
+
+                                }
                             </tbody>
 
                         </table>
-
-
-
-
-
-
-
 
                     </div>
 
