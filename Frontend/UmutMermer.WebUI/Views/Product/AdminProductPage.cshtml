@@ -1,4 +1,4 @@
-﻿model List<AdminProductViewModel>
+﻿@model List<AdminProductViewModel>
 @{
 
     ViewData["Title"] = "AdminProductPage";
@@ -36,7 +36,7 @@
                     <div class="card-block">
 
                         <br />
-                        <a href="UrunEkle" type="button" class="btn btn-outline-info">Ekipman Ekle</a>
+                        <a href="AddProduct" type="button" class="btn btn-outline-info">Ekipman Ekle</a>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
@@ -52,20 +52,19 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    <tr>
+                                    
+                                <tr>
                                         <td>@item.Name</td>
 
                                         <td>
                                             @*<a href="@Url.RouteUrl("ProductUpdate",new {id = item.ID })" class="btn btn-outline-success">Güncelle</a>*@
                                             <a href="" class="btn btn-outline-success">Güncelle</a>
-                                            <a  href="" class="btn btn-outline-danger">Sil</a>
+                                            <a href="/Product/DeleteProduct/@item.Id/" class="btn btn-outline-danger">Sil</a>
                                         </td>
 
 
                                     </tr>
-
-
-                                }
+                                }                               
                             </tbody>
 
                         </table>

@@ -1,9 +1,8 @@
 ﻿
 @{
-    ViewData["Title"] = "ProductUpdatePage";
+    ViewData["Title"] = "UpdateProduct";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
-
 <div class="content-wrapper">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
@@ -39,53 +38,54 @@
                                 <div class="form-group row">
                                     <div class="col-md-4"><label class="col-form-label f-w-600">İsim</label></div>
                                     <div class="col-md-8">
-@*                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-*@                                    </div>
+                                        @*                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                                        *@
+                                    </div>
 
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4"><label class="col-form-label f-w-600">Kategori</label></div>
-                                   @* <div class="col-md-8">
-                                        @Html.DropDownListFor(m => m.Category,
-                                        new List<SelectListItem>
-                                        {
-                                        new SelectListItem {
-                                        Text="Temizleme",
-                                        Value="Temizleme",
+                                    @* <div class="col-md-8">
+                                    @Html.DropDownListFor(m => m.Category,
+                                    new List<SelectListItem>
+                                    {
+                                    new SelectListItem {
+                                    Text="Temizleme",
+                                    Value="Temizleme",
 
-                                        },
-                                        new SelectListItem {
-                                        Text="Öğütme",
-                                        Value="Öğütme"
+                                    },
+                                    new SelectListItem {
+                                    Text="Öğütme",
+                                    Value="Öğütme"
 
-                                        },
-                                        new SelectListItem {
-                                        Text="Taşıma",
-                                        Value="Taşıma",
+                                    },
+                                    new SelectListItem {
+                                    Text="Taşıma",
+                                    Value="Taşıma",
 
-                                        },
-                                        new SelectListItem {
-                                        Text="Paketleme",
-                                        Value="Paketleme",
+                                    },
+                                    new SelectListItem {
+                                    Text="Paketleme",
+                                    Value="Paketleme",
 
-                                        },
-                                        new SelectListItem {
-                                        Text="Depolama",
-                                        Value="Depolama",
+                                    },
+                                    new SelectListItem {
+                                    Text="Depolama",
+                                    Value="Depolama",
 
-                                        },
-                                        new SelectListItem {
-                                        Text="Yem",
-                                        Value="Yem",
+                                    },
+                                    new SelectListItem {
+                                    Text="Yem",
+                                    Value="Yem",
 
-                                        },
-                                        new SelectListItem {
-                                        Text="Montaj",
-                                        Value="Montaj",
+                                    },
+                                    new SelectListItem {
+                                    Text="Montaj",
+                                    Value="Montaj",
 
-                                        },
+                                    },
 
-                                        }, new { @class = "form-control", @name = "Category" })
+                                    }, new { @class = "form-control", @name = "Category" })
                                     </div>*@
 
 
@@ -98,10 +98,11 @@
                                 <div class="form-group row">
                                     <div class="col-md-4"><label class="col-form-label f-w-600">Açıklama</label></div>
                                     <div class="col-md-8">
-@*                                        @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
-*@                                    </div>
+                                        @*                                        @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+                                        *@
+                                    </div>
                                 </div>
-                                
+
 
                                 <div class="form-group row">
                                     <div class="col-md-4"><label class="col-form-label f-w-600">Resim</label></div>
@@ -117,8 +118,8 @@
                                 </div>
 
 
-@*                                @Html.HiddenFor(m => m.ID, new { @class = "form-control" })
-*@
+                                @*                                @Html.HiddenFor(m => m.ID, new { @class = "form-control" })
+                                *@
                             </div>
                             <div class="col-lg-3">
                             </div>
@@ -132,15 +133,15 @@
                                         <div class="row">
                                             @*@foreach (var item in Model.ProductImages)
                                             {*@
-                                                <div class="col-xl-2 col-lg-3 col-sm-3 col-xs-12">
-@*                                                    <img width="225" height="225" src="~/@item.Image" alt="">
-*@                                                    @*<textbox id="imageid" value="@item.ID">@item.ID</textbox>*@
-                                                    @*<button id="idbutton" class="btn btn-outline-danger">Sil</button>*@
-@*                                                    <a class="btn btn-outline-danger" href="javascript:;" id="@item.ID">Sil</a>
-*@                                                    @*<button type="button" onclick="ButtonClick();"> Call &raquo;</button>*@
-                                                </div>
+                                            <div class="col-xl-2 col-lg-3 col-sm-3 col-xs-12">
+                                                @*                                                    <img width="225" height="225" src="~/@item.Image" alt="">
+                                                *@                                                    @*<textbox id="imageid" value="@item.ID">@item.ID</textbox>*@
+                                                @*<button id="idbutton" class="btn btn-outline-danger">Sil</button>*@
+                                                @*                                                    <a class="btn btn-outline-danger" href="javascript:;" id="@item.ID">Sil</a>
+                                                *@                                                    @*<button type="button" onclick="ButtonClick();"> Call &raquo;</button>*@
+                                            </div>
 
-                                          @*  }*@
+                                            @*  }*@
                                         </div>
 
 

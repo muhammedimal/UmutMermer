@@ -31,7 +31,7 @@ namespace UmutMermer.WebApi.Controllers
         }
 
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteProducts(int id)
         {
             var values = _productsService.TGetById(id);
