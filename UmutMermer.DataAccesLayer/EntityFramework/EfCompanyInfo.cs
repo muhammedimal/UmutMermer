@@ -10,9 +10,9 @@ using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.DataAccesLayer.EntityFramework
 {
-    public class EfCompanyİnfo : GenericRepository<Companyİnfo>, ICompanyİnfoDal
+    public class EfCompanyInfo : GenericRepository<CompanyInfo>, ICompanyInfoDal
     {
-        public EfCompanyİnfo(Context context) : base(context)
+        public EfCompanyInfo(Context context) : base(context)
         {
         }
     }

@@ -9,36 +9,36 @@ using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.BusinessLayer.Concrete
 {
-    public class CompanyİnfoManager : ICompanyİnfoService
+    public class CompanyInfoManager : ICompanyİnfoService
     {
-        private readonly ICompanyİnfoDal _companyİnfoDal;
+        private readonly ICompanyInfoDal _companyİnfoDal;
 
-        public CompanyİnfoManager(ICompanyİnfoDal companyİnfoDal)
+        public CompanyInfoManager(ICompanyInfoDal companyİnfoDal)
         {
             _companyİnfoDal = companyİnfoDal;
         }
 
-        public void TDelete(Companyİnfo t)
+        public void TDelete(CompanyInfo t)
         {
             _companyİnfoDal.Delete(t);
         }
 
-        public Companyİnfo TGetById(int id)
+        public CompanyInfo TGetById(int id)
         {
             return _companyİnfoDal.GetById(id); 
         }
 
-        public List<Companyİnfo> TGetList()
+        public List<CompanyInfo> TGetList()
         {
             return _companyİnfoDal.GetList  (); 
         }
 
-        public void TInsert(Companyİnfo t)
+        public void TInsert(CompanyInfo t)
         {
              _companyİnfoDal.Insert   (t);    
         }
 
-        public void TUpdate(Companyİnfo t)
+        public void TUpdate(CompanyInfo t)
         {
             _companyİnfoDal.Update (t);
         }

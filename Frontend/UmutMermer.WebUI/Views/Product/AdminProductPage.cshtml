@@ -1,4 +1,5 @@
-﻿@{
+﻿model List<AdminProductViewModel>
+@{
 
     ViewData["Title"] = "AdminProductPage";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
@@ -56,9 +57,8 @@
 
                                         <td>
                                             @*<a href="@Url.RouteUrl("ProductUpdate",new {id = item.ID })" class="btn btn-outline-success">Güncelle</a>*@
-                                            <a href="@*@Url.RouteUrl(" AdminProductsDetail",new {id=item.ID })*@" class="btn btn-outline-success">Güncelle</a>
-                                            <a id="@*@item.ID*@" href="javascript:;" class="btn btn-outline-danger">Sil</a>
-
+                                            <a href="" class="btn btn-outline-success">Güncelle</a>
+                                            <a  href="" class="btn btn-outline-danger">Sil</a>
                                         </td>
 
 
@@ -88,27 +88,3 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="assets/plugins/light-box/js/ekko-lightbox.js"></script>
 <script src="assets/plugins/lightbox2/dist/js/lightbox.js"></script>
-<script type="text/javascript">
-    $(".btn-outline-danger").click(function (e) {
-        debugger;
-        var id = e.currentTarget.id;
-        $.ajax({
-            type: "GET",
-            url: "/ekipmansil/" + id,
-
-            success: function (response) {
-                alert(response.responseText);
-
-            },
-
-            error: function (response) {
-                alert("HATA!!");
-
-            }
-        });
-        $(this).parent('td').parent('tr').remove();
-        const child = document.getElementById('child');
-
-        child.parentElement.classList.add('yellow-bg');
-    });
-</script>

@@ -18,8 +18,8 @@ builder.Services.AddDbContext<Context>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
-builder.Services.AddScoped<ICompanyÝnfoDal, EfCompanyÝnfo>();
-builder.Services.AddScoped<ICompanyÝnfoService, CompanyÝnfoManager>();
+builder.Services.AddScoped<ICompanyInfoDal, EfCompanyInfo>();
+builder.Services.AddScoped<ICompanyÝnfoService, CompanyInfoManager>();
 
 builder.Services.AddScoped<IPortfolioDal, EfPortfolio>();
 builder.Services.AddScoped<IPortfolioService, PortfolioManager>();

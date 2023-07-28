@@ -1,22 +1,21 @@
-﻿@using UmutMermer.WebUI
-@using UmutMermer.WebUI.Models
-@using UmutMermer.WebUI.Models.CompanyInfo
-@model IEnumerable<CompanyInfoViewModel>
+﻿@model List<UpdateCompanyInfo>
 @{
-    ViewData["Title"] = "CompanyInfoPage";
+
+    ViewData["Title"] = "AdminProductPage";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
+
+
 <div class="content-wrapper">
     <!-- Container-fluid starts -->
-
     <div class="container-fluid">
         <!-- Main content starts -->
         <div>
             <!-- Row Starts -->
             <div class="row">
-                <div class="col-sm-12 p-0">
+                <div class="col-sm-12 p-0 text-center">
                     <div class="main-header">
-                        <h4>Site İçi Bilgiler</h4>
+                        <h4>Ekipmanlar</h4>
                     </div>
                 </div>
             </div>
@@ -25,97 +24,71 @@
             <!-- Form Control starts -->
             <!-- Form Control ends -->
             <!-- Textual inputs starts -->
-            <div class="col-lg-12">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-header-text">Firma Bilgileri</h5>
-                    </div>
-                    <div class="modal fade modal-flex" id="input-addon-Modal" tabindex="-1" role="dialog">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                    <h5 class="modal-title">Code Explanation for input groups &amp; addons</h5>
-                                </div>
-                                <!-- end of modal-header -->
-                                <!-- end of modal-body -->
-                            </div>
-                            <!-- end of modal-content -->
-                        </div>
-                        <!-- end of modal-dialog -->
-                    </div>
-                    <!-- end of modal -->
+                        <h5 class="card-header-text"></h5>
 
+                    </div>
+
+                    <!-- end of modal -->
                     <div class="card-block">
 
-                        <form class="row" method="post" action="FirmaBilgileri">
-                            <div class="col-lg-3">
-                            </div>
-                            <div class="col-lg-6">
+                        <br />
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+
+                                    <th>Adı</th>
+                                    <th>Telefon1</th>
+                                    <th>Telefon2</th>
+                                    <th></th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    
-                                
-                                <div class="form-group row">
-                                    <div class="col-md-2"><label class="col-form-label f-w-600">Telefon</label></div>
-                                    <div class="col-md-10">
-                                            @Html.TextBoxFor(m => item.Telephone1, new { @class = "form-control", required = "required", autocomplete = "off", type = "tel" })
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>@item.Telephone1</td>
+                                        <td>@item.Telephone2</td>
 
 
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-2"><label class="col-form-label f-w-600">Telefon2</label></div>
-                                    <div class="col-md-10">
-                                        @Html.TextBoxFor(m => item.Telephone2, new { @class = "form-control", required = "required", autocomplete = "off", type = "tel" })
+                                        <td>
+                                            @*<a href="@Url.RouteUrl("ProductUpdate",new {id = item.ID })" class="btn btn-outline-success">Güncelle</a>*@
+                                            <a href="/CompanyInfo/UpdateCompanyInfo/@item.Id" class="btn btn-outline-success">Güncelle</a>
 
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-2"><label class="col-form-label f-w-600">Mail</label></div>
-                                    <div class="col-md-10">
-                                        @Html.TextBoxFor(m => item.Mail, new { @class = "form-control", required = "required", autocomplete = "off", type = "email" })
+                                        </td>
 
-                                    </div>
-                                </div>
 
-                                <div class="form-group row">
-                                    <div class="col-md-2"><label class="col-form-label f-w-600">Hakkımızda</label></div>
-                                    <div class="col-md-10">
-                                        @Html.TextAreaFor(m =>item.About, new { @class = "form-control", required = "required", autocomplete = "off" })
+                                    </tr>
 
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-md-2"><label class="col-form-label f-w-600">Adres</label></div>
-                                    <div class="col-md-10">
-                                        @Html.TextAreaFor(m => item.Adress, new { @class = "form-control", required = "required", autocomplete = "off" })
-
-                                    </div>
-                                </div>
-
-                                <div class="col-md-10">
-                                    <button type="submit" value="CompanyUpdate" name="ButtonUpdate" class="btn btn-outline-success">
-                                        Güncelle
-                                    </button>
-                                </div>
-                                @Html.HiddenFor(m => item.Id, new { @class = "form-control" })
 
                                 }
-                            </div>
-                            <div class="col-lg-3">
-                            </div>
-                        </form>
+                            </tbody>
+
+                        </table>
+
                     </div>
+
                 </div>
+
             </div>
 
-
-
         </div>
+
     </div>
 
-
 </div>
+
+<script src="style/jquery-3.2.1.min.js"></script>
+<script src="style/moment.js"></script>
+<script src="style/toastr.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="assets/plugins/light-box/js/ekko-lightbox.js"></script>
+<script src="assets/plugins/lightbox2/dist/js/lightbox.js"></script>
+

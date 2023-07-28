@@ -15,7 +15,7 @@ namespace UmutMermer.WebUI.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
-       
+        [Route("urunler")]
         public async Task<ActionResult> AdminProductPage()
         {
             var client = _httpClientFactory.CreateClient();

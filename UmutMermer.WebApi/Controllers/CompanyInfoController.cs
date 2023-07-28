@@ -24,9 +24,9 @@ namespace UmutMermer.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddCompanyİnfo()
+        public IActionResult AddCompanyİnfo(CompanyInfo companyInfo)
         {
-
+            _companyİnfo.TInsert(companyInfo);
             return Ok();
         }
 
@@ -39,9 +39,9 @@ namespace UmutMermer.WebApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateCompanyİnfo(Companyİnfo companyİnfo)
+        public IActionResult UpdateCompanyİnfo(CompanyInfo companyİnfo)
         {
-            companyİnfo.Id = 1;
+ 
             _companyİnfo.TUpdate(companyİnfo);
             
             return Ok();
@@ -49,7 +49,6 @@ namespace UmutMermer.WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetCompanyİnfo(int id)
         {
-            id = 1; 
             var values = _companyİnfo.TGetById(id);
             return Ok(values);
 

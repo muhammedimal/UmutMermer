@@ -7,7 +7,7 @@ using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.DataAccesLayer.Abstract
 {
-    public interface ICompanyİnfoDal : IGenericDal<Companyİnfo>
+    public interface ICompanyInfoDal : IGenericDal<CompanyInfo>
     {
     }
 }

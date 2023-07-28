@@ -10,4 +10,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.15" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\UmutMermer.BusinessLayer\UmutMermer.BusinessLayer.csproj" />
+    <ProjectReference Include="..\..\UmutMermer.DataAccesLayer\UmutMermer.DataAccesLayer.csproj" />
+    <ProjectReference Include="..\..\UmutMermer.DtoLAyer\UmutMermer.DtoLAyer.csproj" />
+    <ProjectReference Include="..\..\UmutMermer.EntityLayer\UmutMermer.EntityLayer.csproj" />
+    <ProjectReference Include="..\..\UmutMermer.WebApi\UmutMermer.WebApi.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,8 +7,7 @@ using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.BusinessLayer.Abstract
 {
-    public interface ICompanyİnfoService : IGenericService<Companyİnfo>
+    public interface ICompanyİnfoService : IGenericService<CompanyInfo>
     {
-        Companyİnfo TGetById(int id);
     }
 }

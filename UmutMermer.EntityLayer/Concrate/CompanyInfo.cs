@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UmutMermer.EntityLayer.Concrate
 {
-    public class Companyİnfo
+    public class CompanyInfo
     {
         public int Id { get; set; }
         public string Name { get; set; }
