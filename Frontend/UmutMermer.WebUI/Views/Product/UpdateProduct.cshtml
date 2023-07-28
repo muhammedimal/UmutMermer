@@ -1,8 +1,9 @@
-﻿
+﻿@model AdminProductUpdateViewModel
 @{
     ViewData["Title"] = "UpdateProduct";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
+
 <div class="content-wrapper">
     <!-- Container-fluid starts -->
     <div class="container-fluid">
@@ -12,146 +13,84 @@
             <div class="row">
                 <div class="col-sm-12 p-0">
                     <div class="main-header">
-                        <h4>Ürün Detay</h4>
+                        <h4></h4>
                     </div>
                 </div>
             </div>
-            <!-- Row end -->
-            <!-- Row start -->
-            <!-- Form Control starts -->
-            <!-- Form Control ends -->
-            <!-- Textual inputs starts -->
+
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-header-text">Ürün Güncelleme</h5>
+                        <h5 class="card-header-text">Ekipman Ekleme</h5>
                     </div>
 
-                    <!-- end of modal -->
+
+
+
                     <div class="card-block">
 
 
-                        <form enctype="multipart/form-data" class="row" method="post" action="adminekipman">
+                        <form method="post">
                             <div class="col-lg-3">
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group row">
                                     <div class="col-md-4"><label class="col-form-label f-w-600">İsim</label></div>
                                     <div class="col-md-8">
-                                        @*                                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-                                        *@
+                                        <input type="text" asp-for="Name" class="form-control" />
                                     </div>
 
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4"><label class="col-form-label f-w-600">Kategori</label></div>
-                                    @* <div class="col-md-8">
-                                    @Html.DropDownListFor(m => m.Category,
-                                    new List<SelectListItem>
-                                    {
-                                    new SelectListItem {
-                                    Text="Temizleme",
-                                    Value="Temizleme",
+                                    <div class="col-md-8">
+                                        <select name="Category" class="form-control" tabindex="-1" aria-hidden="true">
 
-                                    },
-                                    new SelectListItem {
-                                    Text="Öğütme",
-                                    Value="Öğütme"
+                                            <option value="Temizleme">Mezar Taşı</option>
+                                            <option value="Öğütme">Logar Kapağı </option>
+                                            <option value="Taşıma">Hayrat Çeşmesi</option>
+                                            <option value="Paketleme">Muhammed İmal</option>
+                                            <option value="Depolama">Hakan Ceylan</option>
+                                            <option value="Depolama">Oğuzhan Seçgel</option>
 
-                                    },
-                                    new SelectListItem {
-                                    Text="Taşıma",
-                                    Value="Taşıma",
+                                        </select>
 
-                                    },
-                                    new SelectListItem {
-                                    Text="Paketleme",
-                                    Value="Paketleme",
-
-                                    },
-                                    new SelectListItem {
-                                    Text="Depolama",
-                                    Value="Depolama",
-
-                                    },
-                                    new SelectListItem {
-                                    Text="Yem",
-                                    Value="Yem",
-
-                                    },
-                                    new SelectListItem {
-                                    Text="Montaj",
-                                    Value="Montaj",
-
-                                    },
-
-                                    }, new { @class = "form-control", @name = "Category" })
-                                    </div>*@
-
+                                    </div>
 
                                 </div>
-
-                                @*<input hidden name="Category" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="@item.Category">*@
-
 
 
                                 <div class="form-group row">
                                     <div class="col-md-4"><label class="col-form-label f-w-600">Açıklama</label></div>
                                     <div class="col-md-8">
-                                        @*                                        @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
-                                        *@
+                                        <input type="text" asp-for="Description" class="form-control" />
                                     </div>
                                 </div>
-
 
                                 <div class="form-group row">
                                     <div class="col-md-4"><label class="col-form-label f-w-600">Resim</label></div>
                                     <div class="col-md-8">
-                                        <input type="file" name="Image" value="" />
+                                        <input type="text" asp-for="Images" class="form-control" />
                                     </div>
                                 </div>
 
                                 <div class="col-md-8">
                                     <button type="submit" value="CompanyUpdate" name="ButtonUpdate" class="btn btn-outline-success">
-                                        Güncelle
+                                        Ekle
                                     </button>
                                 </div>
 
 
-                                @*                                @Html.HiddenFor(m => m.ID, new { @class = "form-control" })
-                                *@
+
+
                             </div>
                             <div class="col-lg-3">
                             </div>
                         </form>
-                        <br />
-                        <br />
-                        <form enctype="multipart/form-data" class="row" method="post" action="">
-                            <div class="col-md-">
-                                <div class="card">
-                                    <div class="card-block">
-                                        <div class="row">
-                                            @*@foreach (var item in Model.ProductImages)
-                                            {*@
-                                            <div class="col-xl-2 col-lg-3 col-sm-3 col-xs-12">
-                                                @*                                                    <img width="225" height="225" src="~/@item.Image" alt="">
-                                                *@                                                    @*<textbox id="imageid" value="@item.ID">@item.ID</textbox>*@
-                                                @*<button id="idbutton" class="btn btn-outline-danger">Sil</button>*@
-                                                @*                                                    <a class="btn btn-outline-danger" href="javascript:;" id="@item.ID">Sil</a>
-                                                *@                                                    @*<button type="button" onclick="ButtonClick();"> Call &raquo;</button>*@
-                                            </div>
-
-                                            @*  }*@
-                                        </div>
 
 
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
 
                     </div>
-
 
 
                 </div>
@@ -165,27 +104,3 @@
     </div>
 
 </div>
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript">
-    $(".btn-outline-danger").click(function (e) {
-        debugger;
-        var id = e.currentTarget.id;
-        $.ajax({
-            type: "POST",
-            url: "/urunresimsil/" + id,
-
-            success: function (response) {
-                alert("Silindi!!");
-
-
-            },
-
-            error: function (response) {
-                alert("HATA!!");
-
-            }
-        });
-        $(this).parent('div').remove();
-    });
-</script>

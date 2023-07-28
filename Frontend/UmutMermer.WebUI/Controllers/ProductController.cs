@@ -110,7 +110,7 @@ namespace UmutMermer.WebUI.Controllers
         public async Task<IActionResult> UpdateProduct(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:5254/api/Products{id}");
+            var responseMessage = await client.GetAsync($"http://localhost:5254/api/Products/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -125,11 +125,11 @@ namespace UmutMermer.WebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(model);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("http://localhost:5254/api/Products", stringContent);
+            var responseMessage = await client.PutAsync("http://localhost:5254/api/Products/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
 
-                return RedirectToAction("Index");
+                return RedirectToAction("AdminProductPage");
             }
             return View();
         }
