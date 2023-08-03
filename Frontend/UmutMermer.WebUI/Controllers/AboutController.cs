@@ -2,10 +2,10 @@
 
 namespace UmutMermer.WebUI.Controllers
 {
-	public class PortfolioController : Controller
+	public class AboutController : Controller
 	{
-		[Route("/urunler")]
-		public IActionResult PortfolioPage()
+		[Route("/hakkimizda")]
+		public IActionResult AboutPage()
 		{
 			return View();
 		}

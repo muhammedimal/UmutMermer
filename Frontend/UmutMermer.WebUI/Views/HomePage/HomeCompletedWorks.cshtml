@@ -1,0 +1,26 @@
+﻿@model List<AdminProductViewModel>
+<section class="section blog-post">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="post mb-5">
+                        <a class="image-content" href="blog-single.html">
+                            <img src="~/thomson-main/theme/images/blog/minimal-1.jpg" alt="" class="img-fluid">
+                        </a>
+
+                        <div class="post-content">
+                            <span class="date text-uppercase text-sm">@item.Name</span>
+                            <a href="blog-single.html"><h4>@item.Description</h4></a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+            
+        </div>
+
+    </div>
+</section>
