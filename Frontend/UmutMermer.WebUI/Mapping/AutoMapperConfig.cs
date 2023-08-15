@@ -2,7 +2,9 @@
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using UmutMermer.DtoLAyer.Dtos.CategoryDto;
 using UmutMermer.DtoLAyer.Dtos.CompanyInfoDto;
+using UmutMermer.DtoLAyer.Dtos.LoginDto;
 using UmutMermer.DtoLAyer.Dtos.ProductsDto;
+using UmutMermer.DtoLAyer.Dtos.RegisterDto;
 using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.WebUI.Mapping
@@ -17,6 +19,8 @@ namespace UmutMermer.WebUI.Mapping
             CreateMap<CompanyInfoUpdateDto, CompanyInfo>().ReverseMap();
             CreateMap<CompanyInfoGetDto, CompanyInfo>().ReverseMap();
             CreateMap<CategoryGetDto, Category>().ReverseMap();
+            CreateMap<AddUserDto, AppUser>().ReverseMap();
+            CreateMap<LoginDto, AppUser>().ReverseMap();
         }
     }
 }

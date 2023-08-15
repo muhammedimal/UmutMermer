@@ -1,15 +1,18 @@
+using UmutMermer.DataAccesLayer.Concrete;
+using UmutMermer.EntityLayer.Concrate;
+
 internal class Program
 {
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
+     
         builder.Services.AddControllersWithViews();
         builder.Services.AddHttpClient();
+        builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
         var app = builder.Build();
-        // Configure the HTTP request pipeline.
-        //builder.Services.AddAutoMapper(typeof(Program).Assembly);
+       
 
         if (!app.Environment.IsDevelopment())
         {

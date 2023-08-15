@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UmutMermer.EntityLayer.Concrate
+namespace UmutMermer.DtoLAyer.Dtos.RegisterDto
 {
-    public class AppUser :IdentityUser<int>
+
+    //Kullanıcı kayıt istenirse verileri bu kısıma ekle 
+    public class AddUserDto
     {
         public string Name { get; set; }
+
+
     }
 }
