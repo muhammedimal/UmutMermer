@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UmutMermer.BusinessLayer.Abstract;
+using UmutMermer.DtoLAyer.Dtos.ProductsDto;
 using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.WebApi.Controllers
@@ -10,10 +12,13 @@ namespace UmutMermer.WebApi.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductsService _productsService;
+        private readonly IMapper _mapper;
 
-        public ProductsController(IProductsService productsService)
+        public ProductsController(IProductsService productsService,IMapper mapper)
         {
             _productsService = productsService;
+            _mapper = mapper;
+
         }
 
         [HttpGet]
@@ -24,9 +29,14 @@ namespace UmutMermer.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProducts(Products products)
+        public IActionResult AddProducts(ProductAddDto productAddDto)
         {
-            _productsService.TInsert(products);
+            if(!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var values = _mapper.Map<Products>(productAddDto);
+            _productsService.TInsert(values);
             return Ok();
         }
 
@@ -40,9 +50,14 @@ namespace UmutMermer.WebApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateProducts(Products products)
+        public IActionResult UpdateProducts(ProductUpdateDto productUpdateDto)
         {
-            _productsService.TUpdate(products);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var values = _mapper.Map<Products>(productUpdateDto);
+            _productsService.TUpdate(values);
             return Ok();
         }
         [HttpGet("{id}")]

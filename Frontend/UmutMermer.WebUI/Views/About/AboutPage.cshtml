@@ -1,4 +1,5 @@
-﻿@{
+﻿@model UpdateCompanyInfo
+@{
     ViewData["Title"] = "AboutPage";
     Layout = "~/Views/Layout/Layout.cshtml";
 }
@@ -12,10 +13,10 @@
                 </div>
             </div>
             <div class="col-lg-7">
-                <h2>Jems Smith</h2>
-                <p class="lead mb-4">I create premium designs and technology</p>
+                <h2>@Model.Name</h2>
+                
 
-                <p class="mb-4">I was born in Los Angeles in 1980.I'm 23 years old creative web designer, specializing in User Interface Design and Development.Veritatis culpa sunt alias esse fuga accusamus nostrum, iusto neque. </p>
+                <p class="mb-4">@Model.About</p>
 
 
                 <img src="images/signature.png" alt="" class="img-fluid">
@@ -23,10 +24,10 @@
 
             <div class="col-lg-5">
                 <ul class="list-unstyled mt-3 mb-5 about-list">
-                    <li>- Web design</li>
-                    <li>- Brand Identity</li>
-                    <li>- Development & CMS</li>
-                    <li>- Phptography</li>
+                    <li>- Rögar</li>
+                    <li>- Beton Altyapı Elemanları</li>
+                    <li>- Kompozit Kapak</li>
+                    <li>- Mermer</li>
                 </ul>
             </div>
         </div>
@@ -53,12 +54,13 @@
             </div>
             <div class="col-lg-4 mb-4 mb-lg-0 col-md-4">
                 <h4>Adres</h4>
-                <p>3971 Wines Lane Houston, Texas 77036 <br>363 Detroit Street</p>
+                <p>@Model.Adress</p>
             </div>
             <div class="col-lg-4 col-md-4">
                 <h4>İletişim</h4>
-                <p class="mb-0">info@example.com</p>
-                <p class="mb-0">1800 667 3322</p>
+                <p class="mb-0">@Model.Mail</p>
+                <p class="mb-0">@Model.Telephone1</p>
+                <p class="mb-0">@Model.Telephone2</p>
             </div>
         </div>
         <div class="row">

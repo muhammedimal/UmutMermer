@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Text;
+using UmutMermer.WebUI.Dtos.CompanyInfoDto;
 using UmutMermer.WebUI.Models.AdminProduct;
 using UmutMermer.WebUI.Models.CompanyInfo;
 
@@ -23,7 +24,7 @@ namespace UmutMermer.WebUI.Controllers
             if (responserMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responserMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<UpdateCompanyInfo>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<CompanyInfoGetDto>>(jsonData);
                 return View(values);
             }
             return View();
@@ -38,7 +39,7 @@ namespace UmutMermer.WebUI.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateCompanyInfo>(jsonData);
+                var values = JsonConvert.DeserializeObject<CompanyInfoGetDto>(jsonData);
                 return View(values);
             }
             return View();

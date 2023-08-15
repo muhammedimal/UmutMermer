@@ -26,6 +26,8 @@ builder.Services.AddScoped<IPortfolioService, PortfolioManager>();
 
 builder.Services.AddScoped<IProductsDal, EfProducts>();
 builder.Services.AddScoped<IProductsService, ProductsManager>();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
 
 builder.Services.AddCors(opt =>
 {

@@ -1,0 +1,66 @@
+﻿@model List<ProductGetDto>
+@{
+    ViewData["Title"] = "ProductPage";
+    Layout = "~/Views/Layout/Layout.cshtml";
+}
+
+<section class="section banner pb-lg-0">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8 text-center">
+				<h2>I provide <span class="text-color">Design Solutions.</span> <br>My work is presented here, check them below.</h2>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class=" portfolio ">
+	<div class="container">
+		<div class="row mb-5 justify-content-center">
+	      	<div class="col-10 text-center">
+		        <div class="btn-group btn-group-toggle " data-toggle="buttons">
+		          <label class="btn active ">
+		            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All Projects
+		          </label>
+		          <label class="btn">
+						<input type="radio" name="shuffle-filter" value="design" />Rögar
+		          </label>
+		          <label class="btn">
+						<input type="radio" name="shuffle-filter" value="branding" />Beton Altyapı Elemanları
+		          </label>
+		          <label class="btn">
+						<input type="radio" name="shuffle-filter" value="illustration" />Kompozit Kapak
+		          </label>
+		           <label class="btn">
+						<input type="radio" name="shuffle-filter" value="photo" />Mermer
+		          </label>
+		        </div>
+	      	</div>
+    	</div>	
+
+		<div class="row shuffle-wrapper portfolio-gallery">
+			@foreach (var item in Model)
+			{
+
+				<div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
+					<div class="position-relative inner-box">
+						<div class="image position-relative ">
+							<img  src="~/thomson-main/theme/images/portfolio/1.jpg" alt="portfolio-image" class="img-fluid w-100 d-block">
+								<div class="overlay-box">
+									<div class="overlay-inner">
+									<a class="overlay-content" href="/Product/ProductPage/@item.Id">
+											<h5 class="mb-0 ">@item.Name</h5>
+											<p>@item.Name</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			}
+
+	      
+	    </div>
+	</div>
+</section>
+

@@ -10,4 +10,8 @@
     <ProjectReference Include="..\UmutMermer.EntityLayer\UmutMermer.EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Dtos\PortfolioDto\" />
+  </ItemGroup>
+
 </Project>

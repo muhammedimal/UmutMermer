@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UmutMermer.BusinessLayer.Abstract;
+using UmutMermer.DtoLAyer.Dtos.CompanyInfoDto;
 using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.WebApi.Controllers
@@ -10,10 +12,12 @@ namespace UmutMermer.WebApi.Controllers
     public class CompanyInfoController : ControllerBase
     {
         private readonly ICompanyİnfoService _companyİnfo;
+        private readonly IMapper _mapper;
 
-        public CompanyInfoController(ICompanyİnfoService companyİnfo)
+        public CompanyInfoController(ICompanyİnfoService companyİnfo,Mapper mapper)
         {
             _companyİnfo = companyİnfo;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -39,11 +43,14 @@ namespace UmutMermer.WebApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateCompanyİnfo(CompanyInfo companyİnfo)
+        public IActionResult UpdateCompanyİnfo(CompanyInfoUpdateDto companyInfoUpdateDto)
         {
- 
-            _companyİnfo.TUpdate(companyİnfo);
-            
+            if(!ModelState.IsValid) 
+            {
+                return BadRequest();
+            }
+            var values = _mapper.Map<CompanyInfo>(companyInfoUpdateDto);
+            _companyİnfo.TUpdate(values);           
             return Ok();
         }
         [HttpGet("{id}")]

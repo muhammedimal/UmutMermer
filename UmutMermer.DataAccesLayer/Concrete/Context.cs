@@ -14,5 +14,6 @@ namespace UmutMermer.DataAccesLayer.Concrete
         public DbSet<CompanyInfo> CompanyInfos { get; set; }
         public DbSet<Portfolio> Portfolios { get; set; }
         public DbSet<Products> Product { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
