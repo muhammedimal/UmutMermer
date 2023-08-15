@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.DataAccesLayer.Concrete
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<AppUser, AppRole , int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("server=MUHAMMED;initial catalog=UmutMermer;integrated security=true ");
-            optionsBuilder.UseSqlServer("server=HAKAN\\SQLEXPRESS;initial catalog=UmutMermer;integrated security=true ");
+            optionsBuilder.UseSqlServer("server=MUHAMMED;initial catalog=UmutMermer;integrated security=true ");
+            //optionsBuilder.UseSqlServer("server=HAKAN\\SQLEXPRESS;initial catalog=UmutMermer;integrated security=true ");
         }
         public DbSet <Category> Categories { get; set; }
         public DbSet<CompanyInfo> CompanyInfos { get; set; }

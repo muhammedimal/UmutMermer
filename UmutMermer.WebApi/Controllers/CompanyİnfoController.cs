@@ -7,24 +7,24 @@ namespace UmutMermer.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CompanyİnfoController : ControllerBase
+    public class CompanyInfoController : ControllerBase
     {
-        private readonly ICompanyİnfoService _companyİnfo;
+        private readonly ICompanyInfoService _companyInfo;
 
-        public CompanyİnfoController(ICompanyİnfoService companyİnfo)
+        public CompanyInfoController(ICompanyInfoService companyInfo)
         {
-            _companyİnfo = companyİnfo;
+            _companyInfo = companyInfo;
         }
 
         [HttpGet]
-        public IActionResult CompanyİnfoList()
+        public IActionResult CompanyInfoList()
         {
 
             return Ok();
         }
 
         [HttpPost]
-        public IActionResult AddCompanyİnfo()
+        public IActionResult AddCompanyInfo()
         {
 
             return Ok();
@@ -32,25 +32,25 @@ namespace UmutMermer.WebApi.Controllers
 
 
         [HttpDelete]
-        public IActionResult DeleteCompanyİnfo()
+        public IActionResult DeleteCompanyInfo()
         {
 
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult UpdateCompanyİnfo(Companyİnfo companyİnfo)
+        public IActionResult UpdateCompanyInfo(CompanyInfo companyInfo)
         {
-            companyİnfo.Id = 1;
-            _companyİnfo.TUpdate(companyİnfo);
+            companyInfo.Id = 1;
+            _companyInfo.TUpdate(companyInfo);
             
             return Ok();
         }
         [HttpGet("{id}")]
-        public IActionResult GetCompanyİnfo(int id)
+        public IActionResult GetCompanyInfo(int id)
         {
             id = 1; 
-            var values = _companyİnfo.TGetById(id);
+            var values = _companyInfo.TGetById(id);
             return Ok(values);
 
         }

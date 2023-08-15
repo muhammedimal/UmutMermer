@@ -11,10 +11,10 @@ namespace UmutMermer.WebApi.Controllers
     [ApiController]
     public class CompanyInfoController : ControllerBase
     {
-        private readonly ICompanyİnfoService _companyİnfo;
+        private readonly ICompanyInfoService _companyİnfo;
         private readonly IMapper _mapper;
 
-        public CompanyInfoController(ICompanyİnfoService companyİnfo,Mapper mapper)
+        public CompanyInfoController(ICompanyInfoService companyİnfo,Mapper mapper)
         {
             _companyİnfo = companyİnfo;
             _mapper = mapper;
