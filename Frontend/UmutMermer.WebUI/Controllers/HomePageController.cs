@@ -33,7 +33,7 @@ namespace UmutMermer.WebUI.Controllers
             return PartialView();
 
         }
-        public async Task<PartialViewResult>  HomeCompletedWorks()
+        public async Task<PartialViewResult> HomeCompletedWorks()
         {
             var client = _httpClientFactory.CreateClient();
             var responsMessage = await client.GetAsync("http://localhost:5254/api/Portfolio");

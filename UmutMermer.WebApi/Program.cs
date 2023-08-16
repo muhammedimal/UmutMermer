@@ -3,6 +3,7 @@ using UmutMermer.BusinessLayer.Concrete;
 using UmutMermer.DataAccesLayer.Abstract;
 using UmutMermer.DataAccesLayer.Concrete;
 using UmutMermer.DataAccesLayer.EntityFramework;
+using UmutMermer.EntityLayer.Concrate;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,10 +18,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<Context>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
-
+builder.Services.AddScoped<IAppUserDal , EfAppUserDal>();
+builder.Services.AddScoped<IAppUserService,AppUserManager>();
 builder.Services.AddScoped<ICompanyInfoDal, EfCompanyInfo>();
 builder.Services.AddScoped<ICompanyInfoService, CompanyInfoManager>();
-
+//builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 builder.Services.AddScoped<IPortfolioDal, EfPortfolio>();
 builder.Services.AddScoped<IPortfolioService, PortfolioManager>();
 

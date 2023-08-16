@@ -10,13 +10,8 @@ namespace UmutMermer.WebUI.Dtos.ProductsDto
     public class ProductGetDto
     {
         public int Id { get; set; }
-
-        [Required(ErrorMessage = "Lütfen Ürün İsmi Giriniz.")]
         public string Name { get; set; }
         public string Images { get; set; }
-
-
-        [Required(ErrorMessage = "Lütfen Ürün Açıklaması Giriniz.")]
         public string Description { get; set; }
     }
 }
