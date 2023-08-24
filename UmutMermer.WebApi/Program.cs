@@ -25,10 +25,19 @@ builder.Services.AddScoped<ICompanyInfoService, CompanyInfoManager>();
 //builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
 builder.Services.AddScoped<IPortfolioDal, EfPortfolio>();
 builder.Services.AddScoped<IPortfolioService, PortfolioManager>();
-
+builder.Services.AddScoped<IProductImageDal , EfProductImage>();
+builder.Services.AddScoped<IProductImageService , ProductImageManager>();
 builder.Services.AddScoped<IProductsDal, EfProducts>();
 builder.Services.AddScoped<IProductsService, ProductsManager>();
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+
+
+
+
+
+
+
 
 
 builder.Services.AddCors(opt =>
@@ -53,6 +62,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("MermerApiCors");
 app.UseAuthorization();
 
+app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();

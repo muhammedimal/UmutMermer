@@ -16,5 +16,6 @@ namespace UmutMermer.DtoLAyer.Dtos.ProductsDto
 
         [Required(ErrorMessage = "Lütfen Ürün Açıklaması Giriniz.")]
         public string Description { get; set; }
+        public int CategoryId { get; set; }
     }
 }

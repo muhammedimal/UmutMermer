@@ -7,7 +7,7 @@ using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.BusinessLayer.Abstract
 {
-    public interface IProductsService : IGenericService<Products>
+    public interface IProductsService : IGenericService<Product>
     {
     }
 }

@@ -1,9 +1,13 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using UmutMermer.BusinessLayer.Abstract;
+using UmutMermer.BusinessLayer.Concrete;
+using UmutMermer.DataAccesLayer.Abstract;
 using UmutMermer.DataAccesLayer.Concrete;
+using UmutMermer.DataAccesLayer.EntityFramework;
 using UmutMermer.EntityLayer.Concrate;
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
@@ -14,7 +18,8 @@ internal class Program
         builder.Services.AddDbContext<Context>();
         builder.Services.AddHttpClient();
         builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
-     
+        builder.Services.AddScoped<IProductImageDal, EfProductImage>();
+        builder.Services.AddScoped<IProductImageService, ProductImageManager>();
         var app = builder.Build();
        
 

@@ -35,7 +35,7 @@ namespace UmutMermer.WebApi.Controllers
             {
                 return BadRequest();
             }
-            var values = _mapper.Map<Products>(productAddDto);
+            var values = _mapper.Map<Product>(productAddDto);
             _productsService.TInsert(values);
             return Ok();
         }
@@ -56,7 +56,7 @@ namespace UmutMermer.WebApi.Controllers
             {
                 return BadRequest();
             }
-            var values = _mapper.Map<Products>(productUpdateDto);
+            var values = _mapper.Map<Product>(productUpdateDto);
             _productsService.TUpdate(values);
             return Ok();
         }

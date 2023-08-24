@@ -24,7 +24,7 @@ namespace UmutMermer.WebUI.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateCompanyInfo>(jsonData);
+                var values = JsonConvert.DeserializeObject<CompanyInfoViewModel>(jsonData);
                 return View(values);
             }
             return View();

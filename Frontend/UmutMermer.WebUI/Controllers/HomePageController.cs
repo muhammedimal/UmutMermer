@@ -13,7 +13,7 @@ namespace UmutMermer.WebUI.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
-        [Route("/")]
+        //[Route("/")]
         public async Task<ActionResult> Index()
         {
             return View();

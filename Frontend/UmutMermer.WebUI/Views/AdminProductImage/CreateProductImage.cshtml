@@ -1,0 +1,56 @@
+﻿@model AddProductImageVM
+@{
+    ViewData["Title"] = "CreateProductImage";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+div class="content-wrapper">
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <!-- Main content starts -->
+    <div>
+        <!-- Row Starts -->
+        <div class="row">
+            <div class="col-sm-12 p-0 text-center">
+                <div class="main-header">
+                    <h4>Ekipmanlar</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Row end -->
+        <!-- Row start -->
+        <!-- Form Control starts -->
+        <!-- Form Control ends -->
+        <!-- Textual inputs starts -->
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-header-text"></h5>
+
+                </div>
+
+                <!-- end of modal -->
+                <div class="card-block">
+                       
+                            <form method="post" enctype="multipart/form-data">
+                                <input type="hidden" asp-for="ProductId" />
+                                <label>Ürün Resmi</label>
+                                <input type="file" asp-for="FileImage" class="form-control-file" />
+                                <br />
+                                <button class="btn btn-outline-success">Ürüne Görsel Ekle</button>
+                            </form>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>

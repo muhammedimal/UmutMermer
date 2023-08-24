@@ -1,0 +1,62 @@
+﻿@model AddCategoryDto
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <div>
+
+            <div class="row">
+                <div class="col-sm-12 p-0 text-center">
+                    <div class="main-header" style="margin-top: 0px;">
+                        <h4>Kategoriler</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-header-text"></h5>
+
+                    </div>
+                    <div class="card-block">
+
+                        <br>
+                        <a href="AddProduct" type="button" class="btn btn-outline-info">Yeni Kategori Ekle</a>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <table class="table">
+                            <div class="row justify-content-center align-items-center" style="height: 100vh;">
+                                <div class="col-sm-6">
+                                    <form method="post">
+                                        <input type="hidden" asp-for="Id" />
+                                        <label>Kategori Adı</label>
+                                        <input type="text" asp-for="Name" class="form-control" />
+                                        <!-- <span asp-validation-for="CategoryName" class="text-warning"></span> -->
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <br />
+                                        <button class="btn btn-outline-success">Kategoriyi Ekle</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

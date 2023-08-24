@@ -9,8 +9,8 @@ namespace UmutMermer.EntityLayer.Concrate
     public class Portfolio 
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+       
+        public ICollection<ProductImage>? ProductImage { get; set; }
 
 
     }

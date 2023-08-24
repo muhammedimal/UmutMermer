@@ -13,7 +13,7 @@ namespace UmutMermer.WebUI.Controllers
         {
             _httpClientFactory = httpClientFactory;
         }
-        [Route("/calismalarimiz")]
+      
 		public async Task< IActionResult> Portfolio()
         {
             var client = _httpClientFactory.CreateClient();

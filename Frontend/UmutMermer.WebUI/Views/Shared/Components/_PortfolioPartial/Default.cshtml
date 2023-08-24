@@ -1,9 +1,24 @@
 ﻿@model List<ResultPortfolioDto>
+<section class="page-title section pb-0">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="text-center">
+                <h1 class="text-capitalize mb-0 text-lg">Tamamlanan İşlerimiz</h1>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
 <section class="section blog-post">
     <div class="container">
         <div class="row">
             @foreach (var item in Model)
+
             {
+
+
                 <div class="col-lg-4 col-md-6">
                     <div class="post mb-5">
                         <a class="image-content" href="blog-single.html">

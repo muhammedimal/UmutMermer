@@ -1,0 +1,69 @@
+﻿@model List<CategoryGetDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Main content starts -->
+        <div>
+            <!-- Row Starts -->
+            <div class="row">
+                <div class="col-sm-12 p-0 text-center">
+                    <div class="main-header" style="margin-top: 0px;">
+                        <h4>Kategoriler</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Row end -->
+            <!-- Row start -->
+            <!-- Form Control starts -->
+            <!-- Form Control ends -->
+            <!-- Textual inputs starts -->
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-header-text"></h5>
+
+                    </div>
+
+                    <!-- end of modal -->
+                    <div class="card-block">
+
+                        <br>
+                        <a href="/AdminCategory/AddCategory" type="button" class="btn btn-outline-info">Kategori Ekle</a>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Kategori Adı</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>#</td>
+                                        <td>@item.Name</td>
+                                        <td> <a href="/AdminCategory/DeleteCategory/@item.Id" class="btn mb-1 btn-rounded btn-outline-warning">Sil</a></td>
+                                        <td> <a href="/AdminCategory/UpdateCategory/@item.Id" class="btn mb-1 btn-rounded btn-outline-success">Güncelle</a></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

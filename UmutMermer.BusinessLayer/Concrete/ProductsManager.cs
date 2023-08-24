@@ -18,27 +18,27 @@ namespace UmutMermer.BusinessLayer.Concrete
             _productsDal = productsDal;
         }
 
-        public void TDelete(Products t)
+        public void TDelete(Product t)
         {
             _productsDal.Delete(t);
         }
 
-        public Products TGetById(int id)
+        public Product TGetById(int id)
         {
             return _productsDal.GetById(id);
         }
 
-        public List<Products> TGetList()
+        public List<Product> TGetList()
         {
             return _productsDal.GetList();
         }
 
-        public void TInsert(Products t)
+        public void TInsert(Product t)
         {
             _productsDal.Insert(t);
         }
 
-        public void TUpdate(Products t)
+        public void TUpdate(Product t)
         {
             _productsDal.Update(t);
         }

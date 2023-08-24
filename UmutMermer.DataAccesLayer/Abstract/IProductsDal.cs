@@ -7,7 +7,7 @@ using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.DataAccesLayer.Abstract
 {
-    public interface IProductsDal : IGenericDal<Products>
+    public interface IProductsDal : IGenericDal<Product>
     {
     }
 }

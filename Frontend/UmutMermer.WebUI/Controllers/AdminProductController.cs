@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
+using UmutMermer.DataAccesLayer.Concrete;
 using UmutMermer.WebUI.Dtos.CompanyInfoDto;
 using UmutMermer.WebUI.Dtos.ProductsDto;
 using UmutMermer.WebUI.Models.AdminProduct;
@@ -13,10 +15,11 @@ namespace UmutMermer.WebUI.Controllers
     public class AdminProductController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
-
-        public AdminProductController(IHttpClientFactory httpClientFactory)
+        private readonly Context _context;
+        public AdminProductController(IHttpClientFactory httpClientFactory, Context context)
         {
             _httpClientFactory = httpClientFactory;
+            _context = context;
         }
 
 
@@ -55,15 +58,20 @@ namespace UmutMermer.WebUI.Controllers
 
 
 
-
-
-
-
-
-
         [HttpGet]
         public IActionResult AddProduct()
         {
+
+            List<SelectListItem> values = (from x in _context.Categories.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name,
+                                               Value = x.Id.ToString()
+                                           }
+                                           ).ToList();
+
+
+            ViewBag.v1 = values;
             return View();
         }
         [HttpPost]
@@ -89,24 +97,7 @@ namespace UmutMermer.WebUI.Controllers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+       
 
 
         [HttpGet]
@@ -114,6 +105,14 @@ namespace UmutMermer.WebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"http://localhost:5254/api/Products/{id}");
+            List<SelectListItem> value = (from x in _context.Categories.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.Name,
+                                              Value = x.Id.ToString()
+                                          }
+                               ).ToList();
+            ViewBag.v1 = value;
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -123,7 +122,7 @@ namespace UmutMermer.WebUI.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateProduct(AdminProductUpdateViewModel model)
+        public async Task<IActionResult> UpdateProduct(ProductUpdateDto model)
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(model);

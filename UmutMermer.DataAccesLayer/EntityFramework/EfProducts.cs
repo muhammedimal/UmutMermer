@@ -11,7 +11,7 @@ using UmutMermer.EntityLayer.Concrate;
 
 namespace UmutMermer.DataAccesLayer.EntityFramework
 {
-    public class EfProducts : GenericRepository<Products>, IProductsDal
+    public class EfProducts : GenericRepository<Product>, IProductsDal
     {
         public EfProducts(Context context) : base(context)
         {

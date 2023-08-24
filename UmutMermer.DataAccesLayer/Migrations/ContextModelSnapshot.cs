@@ -302,13 +302,16 @@ namespace UmutMermer.DataAccesLayer.Migrations
                     b.ToTable("Portfolios");
                 });
 
-            modelBuilder.Entity("UmutMermer.EntityLayer.Concrate.Products", b =>
+            modelBuilder.Entity("UmutMermer.EntityLayer.Concrate.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -322,9 +325,33 @@ namespace UmutMermer.DataAccesLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.HasKey("ProductId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("UmutMermer.EntityLayer.Concrate.ProductImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Path")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
                 });
 
             modelBuilder.Entity("UmutMermer.EntityLayer.Concrate.User", b =>
@@ -397,6 +424,38 @@ namespace UmutMermer.DataAccesLayer.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("UmutMermer.EntityLayer.Concrate.Product", b =>
+                {
+                    b.HasOne("UmutMermer.EntityLayer.Concrate.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("UmutMermer.EntityLayer.Concrate.ProductImage", b =>
+                {
+                    b.HasOne("UmutMermer.EntityLayer.Concrate.Product", "Products")
+                        .WithMany("ProductImage")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("UmutMermer.EntityLayer.Concrate.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("UmutMermer.EntityLayer.Concrate.Product", b =>
+                {
+                    b.Navigation("ProductImage");
                 });
 #pragma warning restore 612, 618
         }
