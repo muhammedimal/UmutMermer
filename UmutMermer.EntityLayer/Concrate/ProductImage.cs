@@ -10,10 +10,11 @@ namespace UmutMermer.EntityLayer.Concrate
     {
         public int Id { get; set; }
         public string Path { get; set; }
-        public int?  ProductId { get; set; }
-        public Product Products { get; set; }
 
-        public int? PortfolioId { get; set; }
-        public Portfolio Portfolio { get; set; }
+
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
+
+ 
     }
 }

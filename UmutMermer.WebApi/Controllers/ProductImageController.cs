@@ -64,5 +64,26 @@ namespace UmutMermer.WebApi.Controllers
             return Ok();
         }
 
+        [HttpDelete("{id}")]
+
+        public IActionResult DeleteProductImage(int id)
+        {
+            var values = _productImageService.TGetById(id);
+            if (values == null)
+            {
+                var errorMessage = $"{id} numarasına sahip ürün fotoğrafı bulunamadı";
+                return BadRequest(errorMessage);
+            }
+            var filePath = Path.Combine(_environment.WebRootPath, values.Path);
+            if (System.IO.File.Exists(filePath))
+            {
+
+                System.IO.File.Delete(filePath);
+
+            }
+            _productImageService.TDelete(values);
+            return Ok();
+        }
+
     }
 }

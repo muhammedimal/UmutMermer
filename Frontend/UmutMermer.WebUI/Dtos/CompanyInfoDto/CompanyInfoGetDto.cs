@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UmutMermer.WebUI.Dtos.CompanyInfoDto
+﻿namespace UmutMermer.WebUI.Dtos.CompanyInfoDto
 {
     public class CompanyInfoGetDto
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
         public string About { get; set; }
         public string Mail { get; set; }

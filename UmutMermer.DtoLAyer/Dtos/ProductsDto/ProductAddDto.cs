@@ -11,7 +11,7 @@ namespace UmutMermer.DtoLAyer.Dtos.ProductsDto
     {
         [Required(ErrorMessage ="Lütfen Ürün İsmi Giriniz.")]
         public string Name { get; set; }
-        public string Images { get; set; }
+       
 
 
         [Required(ErrorMessage = "Lütfen Ürün Açıklaması Giriniz.")]

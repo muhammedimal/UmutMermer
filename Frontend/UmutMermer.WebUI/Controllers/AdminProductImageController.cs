@@ -64,9 +64,6 @@ namespace UmutMermer.WebUI.Controllers
                     ProductId = model.ProductId,
                 };
 
-
-
-
                 _productImageService.TInsert(productImage);
 
 

@@ -1,4 +1,4 @@
-﻿@model List<UpdateCompanyInfo>
+﻿@model List<CompanyInfoGetDto>
 @{
 
     ViewData["Title"] = "AdminProductPage";
@@ -7,11 +7,8 @@
 
 
 <div class="content-wrapper">
-    <!-- Container-fluid starts -->
     <div class="container-fluid">
-        <!-- Main content starts -->
         <div>
-            <!-- Row Starts -->
             <div class="row">
                 <div class="col-sm-12 p-0 text-center">
                     <div class="main-header">
@@ -19,11 +16,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Row end -->
-            <!-- Row start -->
-            <!-- Form Control starts -->
-            <!-- Form Control ends -->
-            <!-- Textual inputs starts -->
             <div class="col-lg-1"></div>
             <div class="col-lg-10">
                 <div class="card">
@@ -31,8 +23,6 @@
                         <h5 class="card-header-text"></h5>
 
                     </div>
-
-                    <!-- end of modal -->
                     <div class="card-block">
 
                         <br />
@@ -59,7 +49,7 @@
 
 
                                         <td>
-                                            @*<a href="@Url.RouteUrl("ProductUpdate",new {id = item.ID })" class="btn btn-outline-success">Güncelle</a>*@
+                                            
                                             <a href="/CompanyInfo/UpdateCompanyInfo/@item.Id" class="btn btn-outline-success">Güncelle</a>
 
                                         </td>

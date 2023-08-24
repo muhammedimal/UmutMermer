@@ -41,7 +41,7 @@ namespace UmutMermer.WebApi.Controllers
         [HttpPut]
         public IActionResult UpdateCompanyInfo(CompanyInfo companyInfo)
         {
-            companyInfo.Id = 1;
+
             _companyInfo.TUpdate(companyInfo);
             
             return Ok();
@@ -49,7 +49,7 @@ namespace UmutMermer.WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult GetCompanyInfo(int id)
         {
-            id = 1; 
+
             var values = _companyInfo.TGetById(id);
             return Ok(values);
 

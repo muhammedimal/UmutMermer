@@ -16,19 +16,30 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddDbContext<Context>();
+
+
+#region Dependency injection
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
+
 builder.Services.AddScoped<IAppUserDal , EfAppUserDal>();
 builder.Services.AddScoped<IAppUserService,AppUserManager>();
+
 builder.Services.AddScoped<ICompanyInfoDal, EfCompanyInfo>();
 builder.Services.AddScoped<ICompanyInfoService, CompanyInfoManager>();
-//builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+
 builder.Services.AddScoped<IPortfolioDal, EfPortfolio>();
 builder.Services.AddScoped<IPortfolioService, PortfolioManager>();
+
 builder.Services.AddScoped<IProductImageDal , EfProductImage>();
 builder.Services.AddScoped<IProductImageService , ProductImageManager>();
+
 builder.Services.AddScoped<IProductsDal, EfProducts>();
 builder.Services.AddScoped<IProductsService, ProductsManager>();
+#endregion
+
+
+
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 
@@ -53,7 +64,7 @@ builder.Services.AddCors(opt =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

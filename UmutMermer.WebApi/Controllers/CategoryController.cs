@@ -47,7 +47,7 @@ namespace UmutMermer.WebApi.Controllers
             return Ok();
         }
 
-        [HttpPut("{Id}")]
+        [HttpPut]
         public IActionResult UpdateCategory(CategoryGetDto category)
         {
             var values = _mapper.Map<Category>(category);
